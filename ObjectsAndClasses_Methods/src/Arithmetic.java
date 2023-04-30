@@ -7,7 +7,7 @@ public class Arithmetic {
             parametr1 = parametr3;
             parametr2 = parametr4;
 
-            System.out.println("сумму чисел = " + (parametr3 + parametr4));
+            System.out.println("сумма чисел = " + (parametr3 + parametr4));
             System.out.println("производная чисел чисел = " + (parametr3 * parametr4));
 
             if (parametr3 > parametr4) {
