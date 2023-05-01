@@ -6,6 +6,7 @@ public class Arithmetic {
     public Arithmetic( int parametr3, int parametr4){
             parametr1 = parametr3;
             parametr2 = parametr4;
+        System.out.println("Калькулятор");
 
             System.out.println("сумма чисел = " + (parametr3 + parametr4));
             System.out.println("производная чисел чисел = " + (parametr3 * parametr4));
