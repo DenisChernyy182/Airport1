@@ -15,9 +15,9 @@ public class Main {
 
 
         Arithmetic arithmetic = new Arithmetic(1,3);
-        arithmetic.sum(1,3);
-        arithmetic.multiplication(1,3);
-        arithmetic.maxMin(1,3);
+        arithmetic.sum();
+        arithmetic.multiplication();
+        arithmetic.maxMin();
     }
 
 

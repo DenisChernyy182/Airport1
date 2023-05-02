@@ -13,25 +13,24 @@ public class Arithmetic {
         System.out.println("Калькулятор");
     }
 
-    public void sum(int parametr3, int parametr4) {
-        System.out.println("сумма чиселм = " + (parametr3 + parametr4));
+    public void sum() {
+        System.out.println("сумма чисел = " + (parametr1 + parametr2));
     }
 
-    public void multiplication(int parametr3, int parametr4) {
-
-        System.out.println("производная чисел = " + (parametr3 * parametr4));
+    public void multiplication() {
+        System.out.println("производная чисел = " + (parametr1 * parametr2));
     }
 
-    public void maxMin(int parametr3, int parametr4) {
-        if (parametr3 > parametr4) {
-            System.out.println("максимальное из двух чисел = " + parametr3);
+    public void maxMin() {
+        if (parametr1 > parametr2) {
+            System.out.println("максимальное из двух чисел = " + parametr1);
         } else {
-            System.out.println("максимальное из двух чисел = " + parametr4);
+            System.out.println("максимальное из двух чисел = " + parametr2);
         }
-        if (parametr3 < parametr4) {
-            System.out.println("минимальное из двух чисел = " + parametr3);
+        if (parametr1 < parametr2) {
+            System.out.println("минимальное из двух чисел = " + parametr1);
         } else {
-            System.out.println("минимальное из двух чисел = " + parametr4);
+            System.out.println("минимальное из двух чисел = " + parametr2);
         }
     }
 }
