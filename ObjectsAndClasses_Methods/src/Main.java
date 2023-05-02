@@ -14,8 +14,10 @@ public class Main {
 
 
 
-        Arithmetic task1 = new Arithmetic(5, 7);
-
+        Arithmetic arithmetic = new Arithmetic(1,3);
+        arithmetic.sum(1,3);
+        arithmetic.multiplication(1,3);
+        arithmetic.maxMin(1,3);
     }
 
 
