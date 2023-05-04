@@ -1,9 +1,7 @@
 public class Arithmetic {
 
-    int parametr1;
-    int parametr2;
-
-
+    public int parametr1;
+    public int parametr2;
 
 
     public Arithmetic(int parametr3, int parametr4) {
@@ -13,25 +11,29 @@ public class Arithmetic {
         System.out.println("Калькулятор");
     }
 
-    public void sum() {
-        System.out.println("сумма чисел = " + (parametr1 + parametr2));
+    public int sum() {
+       return parametr1 + parametr2;
     }
 
-    public void multiplication() {
-        System.out.println("производная чисел = " + (parametr1 * parametr2));
+    public int multiplication() {
+        return parametr1 * parametr2;
     }
 
-    public void maxMin() {
+    public int max() {
         if (parametr1 > parametr2) {
-            System.out.println("максимальное из двух чисел = " + parametr1);
+            return parametr1;
         } else {
-            System.out.println("максимальное из двух чисел = " + parametr2);
-        }
-        if (parametr1 < parametr2) {
-            System.out.println("минимальное из двух чисел = " + parametr1);
-        } else {
-            System.out.println("минимальное из двух чисел = " + parametr2);
+            return parametr2;
         }
     }
+
+    public int min() {
+        if (parametr1 < parametr2) {
+            return parametr1;
+        } else {
+            return parametr2;
+        }
+    }
+
 }
 

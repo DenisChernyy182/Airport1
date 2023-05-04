@@ -13,11 +13,11 @@ public class Main {
 
 
 
-
-        Arithmetic arithmetic = new Arithmetic(1,3);
-        arithmetic.sum();
-        arithmetic.multiplication();
-        arithmetic.maxMin();
+        Arithmetic arithmetic = new Arithmetic(2, 3);
+        System.out.println("сумма чисел = " + (arithmetic.sum()));
+        System.out.println("произведение чисел = " + (arithmetic.multiplication()));
+        System.out.println("большее число = " + arithmetic.max());
+        System.out.println("меньшее число = " + arithmetic.min());
     }
 
 
