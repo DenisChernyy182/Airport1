@@ -1,72 +1,49 @@
 public final class Dimensions {
+    private final double length;
+    private final double width;
+    private final double height;
 
-    private final int dimensions;
-    private final int weight;
-    private final String deliveryAddress;
-    private final boolean flipped;
-    private final String registrationNumber;
-    private final boolean fragile;
-
-    public Dimensions(int dimensions,
-                      int weight,
-                      String deliveryAddress,
-                      boolean flipped,
-                      String registrationNumber,
-                      boolean fragile) {
-        this.dimensions = dimensions; // габариты
-        this.weight = weight;         //масса
-        this.deliveryAddress = deliveryAddress; //адресс доставки
-        this.flipped = flipped; //перевернутый
-        this.registrationNumber = registrationNumber; // номер регистрации
-        this.fragile = fragile; //хрупкий
+    public Dimensions(double length, double width, double height) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
     }
 
-    public Dimensions setDimensions(int dimensions) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public Dimensions setLength(double length) {
+        return new Dimensions(length, width, height);
     }
 
-    public Dimensions setWeight(int weight) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public Dimensions setWidth(double width) {
+        return new Dimensions(length, width, height);
     }
 
-    public Dimensions setDeliveryAddress(String deliveryAddress) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public Dimensions setHeight(double height) {
+        return new Dimensions(length, width, height);
     }
 
-    public Dimensions setFlipped(boolean flipped) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public double getLength() {
+        return length;
     }
 
-    public Dimensions setRegistrationNumber(String registrationNumber) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public double getWidth() {
+        return width;
     }
 
-    public Dimensions setFragile(boolean fragile) {
-        return new Dimensions(dimensions, weight, deliveryAddress, flipped, registrationNumber, fragile);
+    public double getHeight() {
+        return height;
     }
 
-    public int getDimensions() {
-        return dimensions;
+    public double volume() {
+        return (length * width * height);
     }
 
-    public int getWeight() {
-        return weight;
+    public String toString() {
+        return "Длина- " + length + "мм.;" + "\n" + "Ширина- " + width + "мм.;"
+                + "\n" + "Высота- " + height + "мм.;";
     }
 
-    public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public String getRegistrationNumber() {
-        return registrationNumber;
-    }
-
-    public boolean isFlipped() {
-        return flipped;
-    }
-
-    public boolean isFragile() {
-        return fragile;
+    public double volumeOfGoods(){
+        return getLength() * getHeight() * getWidth();
     }
 
 }
