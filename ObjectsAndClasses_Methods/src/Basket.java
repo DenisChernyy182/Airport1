@@ -23,6 +23,11 @@ public class Basket {
         this.totalPrice = totalPrice;
     }
 
+    private static class AllBaskets {
+        static int totalCount;
+        static int totalCost;
+    }
+
     public static int getCount() {
         return count;
     }
@@ -39,6 +44,8 @@ public class Basket {
         add(name, price, count);
         totalWeight = totalWeight + weight * count;
         items = items + weight + " кг.";
+        AllBaskets.totalCount += count;
+        AllBaskets.totalCost += totalPrice * count;
     }
 
     public void add(String name, int price, int count) {
@@ -86,6 +93,13 @@ public class Basket {
 
     public double getTotalWeight(){
         return totalWeight;
+    }
+
+    public static int getItemCountForAllBaskets() {
+        return AllBaskets.totalCount;
+    }
+    public static int getCostForAllBaskets() {
+        return AllBaskets.totalCost;
     }
 
 
