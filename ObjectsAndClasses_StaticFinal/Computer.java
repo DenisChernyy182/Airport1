@@ -1,33 +1,57 @@
 public class Computer {
-    private final String processor = "";
-    private final String ram = "";
-    private final String information = "";
-    private final String keyboard = "";
-    private final String screen = "";
-    private String vendor = "";
-    private  int weight = 0;
+    public static CPU cpu;
+    public static  RAM ram;
+    public static  InformationStorage information;
+    public static  Keyboard keyboard;
+    public static  Screen screen;
+    public final String vendor;
+    private final String name;
+    private double totalWeight;
 
-
-    private String name = "";
-    private double totalWeight = 0;
-
-    public String getProcessor() {
-        return processor;
+    public Computer(String vendor, String name ){
+        this.vendor = vendor;
+        this.name = name;
     }
 
-    public String getRam() {
-        return ram;
+    public void setCPU(CPU cpu) {
+        this.cpu = cpu;
     }
 
-    public String getInformation() {
+    public void setRam(RAM ram) {
+        this.ram = ram;
+    }
+
+    public void setInformationStorage(InformationStorage information) {
+        this.information = information;
+    }
+
+    public void setKeyboard(Keyboard keyboard) {
+        this.keyboard = keyboard;
+    }
+
+    public void setScreen(Screen screen) {
+        this.screen = screen;
+    }
+
+    public void setTotalWeight(){
+        this.totalWeight = totalWeight;
+    }
+    public CPU getCPU(){
+        return cpu;
+    }
+    public RAM getRAM(RAM ram){
+        return Computer.ram;
+    }
+
+    public InformationStorage getinformationStorage(){
         return information;
     }
 
-    public String getKeyboard() {
+    public Keyboard getKeyboard(){
         return keyboard;
     }
 
-    public String getScreen() {
+    public Screen getScreen() {
         return screen;
     }
 
@@ -35,33 +59,26 @@ public class Computer {
         return vendor;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
-    }
-
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public double getTotalWeight() {
+        return totalWeight = cpu.getWeight() + ram.getWeight() + information.getWeight() + keyboard.getWeight() +
+                screen.getWeight() ;
     }
 
     public String toString() {
-        return "Компьютер" + "\n" + "\t" +
-                "Производитель" + vendor +"\n" + "\t" +
-                "Название" + name + "\n" +
-                "Процессор" + processor + "\n" +
-                "Оперативная память" + ram +"\n" +
-                "Накопитель информации" + information + "\n" +
-                "Клавиатура" + keyboard + "\n" +
-                "Экран" + screen + "\n" +
-                "Общая масса компьютера" +   "\n" ;
+        return "Компьютер" + "\n" +
+                "Производитель: " + vendor + "\n" +
+                "Название: " + name + "\n" +
+                "Процессор: " + cpu + "\n" +
+                "Оперативная память: " + ram + "\n" +
+                "Накопитель информации: " + information + "\n" +
+                "Клавиатура: " + keyboard + "\n" +
+                "Экран: " + screen + "\n" +
+                "Общая масса компьютера: " + getTotalWeight() + " кг";
     }
-    public Computer(String vendor, String name ){
-        this.vendor = vendor;
-        this.name = name;
-    }
-//    public Computer(CPU cpu, RAM ram,InformationStorage InformationStorage, Screen screen, Keyboard keyboard){
-//    }
+
+
+
 }
