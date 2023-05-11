@@ -1,5 +1,4 @@
 public class Basket {
-
     private static int count = 0;
     private String items = "";
     private int totalPrice = 0;
@@ -23,10 +22,9 @@ public class Basket {
         this.totalPrice = totalPrice;
     }
 
-    private static class AllBaskets {
-        static int totalCount;
-        static int totalCost;
-    }
+    static int totalCount;
+    static int totalCost;
+    public int totalCountNotStatic;
 
     public static int getCount() {
         return count;
@@ -37,18 +35,16 @@ public class Basket {
     }
 
     public void add(String name, int price) {
-        add(name, price, 1);
+        add(name, price, 1,0);
     }
 
     public void add(String name, int price, int count, double weight) {
-        add(name, price, count);
         totalWeight = totalWeight + weight * count;
-        items = items + weight + " кг.";
-        AllBaskets.totalCount += count;
-        AllBaskets.totalCost += totalPrice * count;
-    }
+        totalCount += count;
+        totalCountNotStatic += count;
+        totalCost = totalCost + count * price;
 
-    public void add(String name, int price, int count) {
+
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -64,10 +60,11 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-            count + " шт.  " + price + " руб. ";
+                count + " шт.  " + price + " руб. " ;
+        items = items + weight + " кг." ;
         totalPrice = totalPrice + count * price;
-
     }
+
 
     public void clear() {
         items = "";
@@ -96,12 +93,23 @@ public class Basket {
     }
 
     public static int getItemCountForAllBaskets() {
-        return AllBaskets.totalCount;
+        return totalCount;
     }
     public static int getCostForAllBaskets() {
-        return AllBaskets.totalCost;
+        return totalCost;
     }
 
+    public static int averageBasket() {
+        return getCostForAllBaskets() / totalCount;
+    }
+
+    public static int averageCostAll() {
+        return totalCost / count;
+    }
+
+    public int getCostForAllBasketsNotStatic() {
+        return totalCountNotStatic;
+    }
 
 
 }

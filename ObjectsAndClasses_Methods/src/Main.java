@@ -1,18 +1,33 @@
 public class Main {
 
     public static void main(String[] args) {
-        Basket basket = new Basket();
-        basket.add("Milk", 40, 1, 1.5);
-        basket.add("Meat", 100, 1, 2.5);
-        basket.add("Breat", 120, 1, 0.5);
-        basket.add("Cheese", 1220, 1, 1);
-        basket.print("Корзина");
-
-        double ves = basket.getTotalWeight();
-        System.out.println("Общий вес товара: " + ves + "кг.");
-
+        Basket basketDima = new Basket();
+        basketDima.add("Milk", 10, 1, 2.5);
+        basketDima.add("Meat", 10, 1, 2.5);
+        basketDima.add("Breat", 10, 1, 0.5);
+        basketDima.add("Cheese", 10, 1, 1);
+        basketDima.print("Корзина Димы");
+        double vesD = basketDima.getTotalWeight();
+        System.out.println("Общий вес товара: " + vesD + "кг.");
         System.out.println("Общее количество товаров: " + Basket.getItemCountForAllBaskets());
-        System.out.println("Общая стоимость товаров: " + Basket.getCostForAllBaskets());
+        System.out.println("Общая стоимость товаров корзины: " + Basket.getCostForAllBaskets() + " руб.");
+        System.out.println();
+
+        Basket basketNina = new Basket();
+        basketNina.add("Milk", 10, 1, 1.5);
+        basketNina.add("Meat", 10, 1, 2.5);
+        basketNina.add("Breat", 10, 1, 0.5);
+        basketNina.add("Cheese", 10, 1, 1);
+        basketNina.add("Oil", 10, 1, 1);
+        basketNina.print("Корзина Нины");
+        double vesN = basketNina.getTotalWeight();
+        System.out.println("Общий вес товара: " + vesN + "кг.");
+        System.out.println("Общее количество товаров: " + basketNina.getCostForAllBasketsNotStatic());
+        System.out.println("Общая стоимость товаров корзины: " + basketNina.getTotalPrice() + " руб.");
+        System.out.println();
+        System.out.println("Средняя цена товара во всех корзинах: " + Basket.averageBasket() + " руб.");
+        System.out.println("Средняя стоимость корзин: " + basketNina.averageCostAll() + " руб.");
+
 
 
 
@@ -22,6 +37,4 @@ public class Main {
         System.out.println("большее число = " + arithmetic.max());
         System.out.println("меньшее число = " + arithmetic.min());
     }
-
-
 }

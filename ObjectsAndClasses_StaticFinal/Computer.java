@@ -5,6 +5,9 @@ public class Computer {
     private final String keyboard = "";
     private final String screen = "";
     private String vendor = "";
+    private  int weight = 0;
+
+
     private String name = "";
     private double totalWeight = 0;
 
