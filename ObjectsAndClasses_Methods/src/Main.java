@@ -30,7 +30,6 @@ public class Main {
 
 
 
-
         Arithmetic arithmetic = new Arithmetic(2, 3);
         System.out.println("сумма чисел = " + (arithmetic.sum()));
         System.out.println("произведение чисел = " + (arithmetic.multiplication()));

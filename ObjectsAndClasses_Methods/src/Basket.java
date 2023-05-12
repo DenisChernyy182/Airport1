@@ -110,6 +110,4 @@ public class Basket {
     public int getCostOneBasket() {
         return totalOneBasket;
     }
-
-
 }
