@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Computer computer = new Computer("Intel", "i7");
-        CPU cpu = new CPU(2700, "intel", 100,0.5);
+        CPU cpu = new CPU(2700, "intel", 100,2);
         computer.setCPU(cpu);
         RAM ram = new RAM("Apace", 600,2);
         computer.setRam(ram);
@@ -28,11 +28,5 @@ public class Main {
         computer1.setKeyboard(keyboard1);
 
         System.out.println(computer1);
-
-
-
-
-
-
     }
 }
