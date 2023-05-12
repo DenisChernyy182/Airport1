@@ -24,7 +24,7 @@ public class Basket {
 
     static int totalCount;
     static int totalCost;
-    public int totalCountNotStatic;
+    public int totalOneBasket;
 
     public static int getCount() {
         return count;
@@ -41,7 +41,7 @@ public class Basket {
     public void add(String name, int price, int count, double weight) {
         totalWeight = totalWeight + weight * count;
         totalCount += count;
-        totalCountNotStatic += count;
+        totalOneBasket += count;
         totalCost = totalCost + count * price;
 
 
@@ -107,8 +107,8 @@ public class Basket {
         return totalCost / count;
     }
 
-    public int getCostForAllBasketsNotStatic() {
-        return totalCountNotStatic;
+    public int getCostOneBasket() {
+        return totalOneBasket;
     }
 
 
