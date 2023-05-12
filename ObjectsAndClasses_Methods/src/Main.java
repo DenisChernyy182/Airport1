@@ -22,12 +22,11 @@ public class Main {
         basketNina.print("Корзина Нины");
         double vesN = basketNina.getTotalWeight();
         System.out.println("Общий вес товара: " + vesN + "кг.");
-        System.out.println("Общее количество товаров: " + basketNina.getCostOneBasket());
+        System.out.println("Общее количество товаров: " + basketNina.getGoodsInOneBasket());
         System.out.println("Общая стоимость товаров корзины: " + basketNina.getTotalPrice() + " руб.");
         System.out.println();
         System.out.println("Средняя цена товара во всех корзинах: " + Basket.averageBasket() + " руб.");
         System.out.println("Средняя стоимость корзин: " + basketNina.averageCostAll() + " руб.");
-
 
 
         Arithmetic arithmetic = new Arithmetic(2, 3);
