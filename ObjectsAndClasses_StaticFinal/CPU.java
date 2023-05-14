@@ -1,10 +1,10 @@
-public enum CPU {;
+public final class CPU {
     private final double frequency;
     private final String cores;
     private final int manufacturer;
     private final double weight;
 
-    CPU(double frequency, String cores, int manufacturer, double weight) {
+    public CPU(double frequency, String cores, int manufacturer, double weight) {
         this.frequency = frequency;
         this.cores = cores;
         this.manufacturer = manufacturer;

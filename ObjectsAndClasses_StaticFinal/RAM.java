@@ -1,15 +1,15 @@
-public enum RAM {;
-    private final String type;
+public final class RAM {;
+    private final RAMdType type;
     private final int volume;
     private final double weight;
 
-    RAM(String type, int volume, double weight) {
+    public RAM(String type, int volume, double weight) {
         this.type = type;
         this.volume = volume;
         this.weight = weight;
     }
 
-    public String getType() {
+    public KeyboardType getType() {
         return type;
     }
 

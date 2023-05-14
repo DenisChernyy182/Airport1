@@ -1,9 +1,9 @@
-public enum InformationStorage {;
+public final class  InformationStorage {;
     private final String type;
     private final int volume;
     private final double weight;
 
-    InformationStorage(String type, int volume, double weight) {
+    public InformationStorage(String type, int volume, double weight) {
         this.type = type;
         this.volume = volume;
         this.weight = weight;

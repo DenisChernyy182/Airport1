@@ -1,15 +1,15 @@
-public enum Keyboard {;
-    private final String type;
+public final class Keyboard {
+    private final KeyboardType type;
     private final boolean backlit;
     private final double weight;
 
-    Keyboard(String type, boolean backlit, double weight) {
-        this.type = type;
+    public Keyboard(String type, boolean backlit, double weight) {
+        this.type = KeyboardType.valueOf(type);
         this.backlit = backlit;
         this.weight = weight;
     }
 
-    public String getType() {
+    public KeyboardType getType() {
         return type;
     }
 
