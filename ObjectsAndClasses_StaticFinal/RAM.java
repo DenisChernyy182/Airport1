@@ -1,4 +1,4 @@
-public final class RAM {;
+public final class RAM {
     private final RAMType type;
     private final int volume;
     private final double weight;

@@ -1,14 +1,14 @@
 public class Computer {
-    public static CPU cpu;
-    public static  RAM ram;
-    public static  InformationStorage information;
-    public static  Keyboard keyboard;
-    public static  Screen screen;
-    public final String vendor;
+    private CPU cpu;
+    private RAM ram;
+    private InformationStorage information;
+    private Keyboard keyboard;
+    private Screen screen;
+    private final String vendor;
     private final String name;
     private double totalWeight;
 
-    public Computer(String vendor, String name ){
+    public Computer(String vendor, String name) {
         this.vendor = vendor;
         this.name = name;
     }
@@ -33,21 +33,23 @@ public class Computer {
         this.screen = screen;
     }
 
-    public void setTotalWeight(){
+    public void setTotalWeight() {
         this.totalWeight = totalWeight;
     }
-    public CPU getCPU(){
+
+    public CPU getCPU() {
         return cpu;
     }
-    public RAM getRAM(RAM ram){
-        return Computer.ram;
+
+    public RAM getRAM() {
+        return ram;
     }
 
-    public InformationStorage getinformationStorage(){
+    public InformationStorage getinformationStorage() {
         return information;
     }
 
-    public Keyboard getKeyboard(){
+    public Keyboard getKeyboard() {
         return keyboard;
     }
 
@@ -62,9 +64,10 @@ public class Computer {
     public String getName() {
         return name;
     }
+
     public double getTotalWeight() {
         return totalWeight = cpu.getWeight() + ram.getWeight() + information.getWeight() + keyboard.getWeight() +
-                screen.getWeight() ;
+                screen.getWeight();
     }
 
     public String toString() {
@@ -78,7 +81,6 @@ public class Computer {
                 "Экран: " + screen + "\n" +
                 "Общая масса компьютера: " + getTotalWeight() + " кг";
     }
-
 
 
 }

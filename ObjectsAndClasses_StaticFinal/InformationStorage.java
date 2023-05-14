@@ -1,4 +1,4 @@
-public final class  InformationStorage {;
+public final class InformationStorage {
     private final InformationStorageType type;
     private final int volume;
     private final double weight;
