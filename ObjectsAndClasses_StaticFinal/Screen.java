@@ -5,7 +5,7 @@ public final class Screen {
 
      public Screen(double size, String type, double weight) {
         this.size = size;
-        this.type = type;
+        this.type = ScreenType.valueOf(type);
         this.weight = weight;
     }
 
@@ -13,7 +13,7 @@ public final class Screen {
         return size;
     }
 
-    public String getType() {
+    public ScreenType getType() {
         return type;
     }
 

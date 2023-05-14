@@ -1,15 +1,15 @@
 public final class RAM {;
-    private final RAMdType type;
+    private final RAMType type;
     private final int volume;
     private final double weight;
 
     public RAM(String type, int volume, double weight) {
-        this.type = type;
+        this.type = RAMType.valueOf(type);
         this.volume = volume;
         this.weight = weight;
     }
 
-    public KeyboardType getType() {
+    public RAMType getType() {
         return type;
     }
 
