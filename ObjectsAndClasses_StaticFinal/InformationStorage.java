@@ -3,8 +3,8 @@ public final class InformationStorage {
     private final int volume;
     private final double weight;
 
-    public InformationStorage(String type, int volume, double weight) {
-        this.type = InformationStorageType.valueOf(type);
+    public InformationStorage(InformationStorageType type, int volume, double weight) {
+        this.type = type;
         this.volume = volume;
         this.weight = weight;
     }

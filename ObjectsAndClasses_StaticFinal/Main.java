@@ -7,7 +7,7 @@ public class Main {
         computer.setCPU(cpu);
         RAM ram = new RAM(RAMType.TYPE1, 600, 2);
         computer.setRam(ram);
-        InformationStorage informationStorage = new InformationStorage("HDD", 200, 2);
+        InformationStorage informationStorage = new InformationStorage(InformationStorageType.TYPE1, 200, 2);
         computer.setInformationStorage(informationStorage);
         Screen screen = new Screen(54, "VA", 1.5);
         computer.setScreen(screen);
@@ -22,7 +22,7 @@ public class Main {
         computer1.setCPU(cpu1);
         RAM ram1 = new RAM(RAMType.TYPE2, 500, 1.5);
         computer1.setRam(ram1);
-        InformationStorage informationStorage1 = new InformationStorage("SSD", 200, 2);
+        InformationStorage informationStorage1 = new InformationStorage(InformationStorageType.TYPE2, 200, 2);
         computer1.setInformationStorage(informationStorage);
         Screen screen1 = new Screen(54, "IPS", 1.5);
         computer1.setScreen(screen1);
