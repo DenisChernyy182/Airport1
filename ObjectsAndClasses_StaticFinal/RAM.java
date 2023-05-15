@@ -1,10 +1,10 @@
 public final class RAM {
-    private final RAMType type;
+    private final RAMtype type;
     private final int volume;
     private final double weight;
 
-    public RAM(String type, int volume, double weight) {
-        this.type = RAMType.valueOf(type);
+    public RAM(RAMType type, int volume, double weight) {
+        this.type = type;
         this.volume = volume;
         this.weight = weight;
     }
