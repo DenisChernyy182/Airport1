@@ -1,3 +1,3 @@
 public enum ScreenType {
-    TYPE1, TYPE2
+    IPS, TN
 }

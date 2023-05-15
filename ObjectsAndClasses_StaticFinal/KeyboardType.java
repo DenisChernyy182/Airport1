@@ -1,3 +1,3 @@
 public enum KeyboardType {
-    TYPE1, TYPE2
+    Механическая, мембранная
 }

@@ -1,5 +1,5 @@
 public final class RAM {
-    private final RAMtype type;
+    private final RAMType type;
     private final int volume;
     private final double weight;
 

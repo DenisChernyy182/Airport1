@@ -3,8 +3,8 @@ public final class Keyboard {
     private final boolean backlit;
     private final double weight;
 
-    public Keyboard(String type, boolean backlit, double weight) {
-        this.type = KeyboardType.valueOf(type);
+    public Keyboard(KeyboardType type, boolean backlit, double weight) {
+        this.type = type;
         this.backlit = backlit;
         this.weight = weight;
     }
