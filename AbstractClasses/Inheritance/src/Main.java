@@ -1,22 +1,15 @@
 public class Main {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         Company company = new Company();
-        Company company2 = new Company();
 
         hire(company);
-        hire(company2);
-        System.out.println("Первая компания");
+        System.out.println("Заработная лата работников компании:");
         company.print();
-        System.out.println("Вторая компания");
-        company2.print();
-        fireEmployees2(company);
-        fireEmployees2(company2);
-        System.out.println("Первая компания");
-        company.print();
-        System.out.println("Вторая компания");
-        company2.print();
+        printLowest(company);
+        printHighest(company);
 
     }
+
     public static void hire(Company company) {
         for (int i = 0; i < 10; i++) {
             Employee operator = new Operator();
@@ -31,24 +24,17 @@ public class Main {
             company.hire(topManager);
         }
     }
-    public static void fireEmployees2(Company company) {
-        int countEmployees = company.getSize();
-        for (int i = 0; i < countEmployees * 0.3; i++) {
-            int index = (int) (Math.random() * company.getSize());
-            Employee dismissed = company.getEmployee().get(index);
-            company.fire(dismissed);
-        }
-    }
-    public static void printLowest (Company company){
+
+    public static void printLowest(Company company) {
         System.out.println("Самые низкие зарплаты: ");
-        for (Employee employee : company.getLowestSalaryStaff(30)) {
+        for (Employee employee : company.getLowestSalaryStaff(5)) {
             System.out.println(employee.getMonthSalary());
         }
     }
 
-    public static void printHighest (Company company){
+    public static void printHighest(Company company) {
         System.out.println("Самые высокие зарплаты: ");
-        for (Employee employee : company.getTopSalaryStaff(10)) {
+        for (Employee employee : company.getTopSalaryStaff(5)) {
             System.out.println(employee.getMonthSalary());
         }
     }

@@ -11,7 +11,6 @@ public class Company {
         return employee;
     }
 
-
     public void print() {
         for (Employee employee : getEmployee()) {
             System.out.println(employee.getMonthSalary());
