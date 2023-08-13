@@ -3,12 +3,12 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Company {
-    protected static int income;
+    private int income;
 
-    private static final ArrayList<Employee> employee = new ArrayList<>();
+    private final ArrayList<Employee> listEmployees = new ArrayList<>();
 
     public List<Employee> getEmployee() {
-        return employee;
+        return listEmployees;
     }
 
     public void print() {
@@ -18,15 +18,15 @@ public class Company {
     }
 
     public int getSize() {
-        return employee.size();
+        return listEmployees.size();
     }
 
     public void setIncome(int income) {
-        Company.income = income;
+        this.income = income;
     }
 
-    public static double getIncome() {
-        return Company.income;
+    public double getIncome() {
+        return this.income;
     }
 
     public Company() {
@@ -36,27 +36,23 @@ public class Company {
 
     public ArrayList<Employee> hireAll (Employee employee, int count) {
         for (int i = 0; i < count; i++) {
-            Company.employee.add(employee);
+            this.listEmployees.add(employee);
         }
-        return Company.employee;
+        return this.listEmployees;
     }
 
     public void hire(Employee employee) {
-        Company.employee.add(employee);
-    }
-
-    public void fire(Employee employee) {
-        Company.employee.remove(employee);
+        this.listEmployees.add(employee);
     }
 
     public List<Employee> getTopSalaryStaff(int count) {
-        List<Employee> highestSalary = new ArrayList<>(employee);
+        List<Employee> highestSalary = new ArrayList<>(listEmployees);
         highestSalary.sort(Comparator.comparing(Employee::getMonthSalary).reversed());
         return highestSalary.subList(0, count);
     }
 
     public List<Employee> getLowestSalaryStaff(int count) {
-        List<Employee> lowestSalary = new ArrayList<>(employee);
+        List<Employee> lowestSalary = new ArrayList<>(listEmployees);
         lowestSalary.sort(Comparator.comparing(Employee::getMonthSalary));
         return lowestSalary.subList(0, count);
     }
