@@ -30,7 +30,6 @@ public class Company {
     }
 
     public Company() {
-        new ArrayList<String>();
         setIncome(income);
     }
 
