@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) {
         Company company = new Company();
         hire(company);
-//        System.out.println("Заработная плата работников компании:");
-//        company.print();
         printLowest(company);
         printHighest(company);
         fireEmployees(company);
