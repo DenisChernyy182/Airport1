@@ -6,11 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Company company = new Company();
         hire(company);
-        System.out.println("Заработная плата работников компании:");
-        company.print();
+//        System.out.println("Заработная плата работников компании:");
+//        company.print();
         printLowest(company);
         printHighest(company);
         fireEmployees(company);
+        printHighestFired(company);
+        printLowestFired(company);
 
     }
 
@@ -34,14 +36,30 @@ public class Main {
 
         int sumTopManager = 0;
         for (int i = 0; i < 10; i++) {
-            Employee topManager = new TopManager();
+            Employee topManager = new TopManager(company);
             company.hire(topManager);
             sumTopManager++;
         }
         System.out.println("Колличество Top Managers: " + sumTopManager + " чел.");
     }
 
+
+    public static void printLowest(Company company) {
+        System.out.println("Самые низкие зарплаты: ");
+        for (Employee ignored : company.getLowestSalaryStaff(30)) {
+            System.out.println(ignored.getMonthSalary());
+        }
+    }
+
+    public static void printHighest(Company company) {
+        System.out.println("Самые высокие зарплаты: ");
+        for (Employee employee : company.getTopSalaryStaff(11)) {
+            System.out.println(employee.getMonthSalary());
+        }
+    }
+
     public static void fireEmployees(Company company) {
+        System.out.println("Уволили 50% работников");
         int countEmployees = company.getSize();
         for (int i = 0; i < countEmployees / 2; i++) {
             int index = (int) (Math.random() * company.getSize());
@@ -50,21 +68,18 @@ public class Main {
         }
     }
 
-
-    public static void printLowest(Company company) {
-        System.out.println("Самые низкие зарплаты: ");
-        for (Employee ignored : company.getLowestSalaryStaff(5)) {
+    public static void printLowestFired(Company company) {
+        System.out.println("Самые низкие зарплаты после увольнения 50% работников: ");
+        for (Employee ignored : company.getLowestSalaryStaff(30)) {
             System.out.println(ignored.getMonthSalary());
         }
     }
 
-    public static void printHighest(Company company) {
-        System.out.println("Самые высокие зарплаты: ");
-        for (Employee employee : company.getTopSalaryStaff(10)) {
-//            System.out.println(employee.getMonthSalary());
+    public static void printHighestFired(Company company) {
+        System.out.println("Самые высокие зарплаты после увольнения 50% работников: ");
+        for (Employee employee : company.getTopSalaryStaff(11)) {
+            System.out.println(employee.getMonthSalary());
         }
     }
-
-
 
 }

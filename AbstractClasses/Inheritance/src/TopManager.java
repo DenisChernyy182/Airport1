@@ -1,10 +1,12 @@
 public class TopManager implements Employee {
+
     private static final int SALARY = 100000;
     private static final int MIN_COMPANY_INCOME = 1_000_000;
     private static final double BONUS_TOP_MANAGER = 1.5;
+    private final Company company;
 
-    public TopManager () {
-        Company salary = new Company();
+    public TopManager (Company company) {
+        this.company = company;
     }
 
     @Override
