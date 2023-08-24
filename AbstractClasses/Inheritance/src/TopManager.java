@@ -11,7 +11,7 @@ public class TopManager implements Employee {
 
     @Override
     public int getMonthSalary() {
-        if (> MIN_COMPANY_INCOME) {
+        if (TopManager(company) > MIN_COMPANY_INCOME) {
             return (int) (SALARY * BONUS_TOP_MANAGER);
         } else {
             return SALARY;
