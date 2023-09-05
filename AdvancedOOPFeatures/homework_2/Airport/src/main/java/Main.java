@@ -25,7 +25,6 @@ public class Main {
                         .isBefore(dateNow.plusHours(2)))
                 .collect(Collectors.toList());
     }
-
     public static LocalDateTime modifiedDate(Flight date) {
         return LocalDateTime.ofInstant(date.getDate().toInstant(), ZoneId.systemDefault());
     }
