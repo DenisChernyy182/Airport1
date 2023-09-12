@@ -20,7 +20,7 @@ public class ExceptionTests {
     void moreThenFourElementsInputString() {
         final String input = "Василий Петров vasily.petrov@gmail.com +79215637722 5слово";
 
-        assertThrows(Throwable.class, () -> storage.addCustomer(input),
+        Assertions.assertThrows(Throwable.class, () -> storage.addCustomer(input),
                 "Не выброшено исключение при количестве элементов в строке больше 4");
     }
 
@@ -28,7 +28,7 @@ public class ExceptionTests {
     @DisplayName("Передано менее 4 слов в строке")
     void lessThanFourElementsInputString() {
         final String input = "Василий Петров vasily.petrov@gmail.com";
-        assertThrows(Throwable.class, () -> storage.addCustomer(input),
+        Assertions.assertThrows(Throwable.class, () -> storage.addCustomer(input),
                 "Не выброшено исключение при количестве элементов в строке меньше 4");
     }
 
@@ -38,7 +38,7 @@ public class ExceptionTests {
         final String wrongEmail = "thisIsNotAnEmail";
         final String input = "Василий Петров " + wrongEmail + " +79215637722";
 
-        assertThrows(Throwable.class, () -> storage.addCustomer(input),
+        Assertions.assertThrows(Throwable.class, () -> storage.addCustomer(input),
                 "Не выброшено исключение при неверном формате email -> " + wrongEmail);
     }
 
@@ -48,7 +48,7 @@ public class ExceptionTests {
         final String wrongPhoneNumber = "+thisIsNotANumber";
         final String input = "Василий Петров hello@skillbox.ru " + wrongPhoneNumber;
 
-        assertThrows(Throwable.class, () -> storage.addCustomer(input),
+        Assertions.assertThrows(Throwable.class, () -> storage.addCustomer(input),
                 "Не выброшено исключение при неверном формате номера -> " + wrongPhoneNumber);
     }
 
@@ -64,8 +64,8 @@ public class ExceptionTests {
         assertEquals(1, storage.getCount());
 
         Customer customer = storage.getCustomer(name);
-        assertEquals(name, customer.getName());
-        assertEquals(email, customer.getEmail());
-        assertEquals(phone, customer.getPhone());
+        Assertions.assertEquals(name, customer.getName());
+        Assertions.assertEquals(email, customer.getEmail());
+        Assertions.assertEquals(phone, customer.getPhone());
     }
 }
