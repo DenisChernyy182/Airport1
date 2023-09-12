@@ -15,7 +15,7 @@ public class CustomerStorage {
         final int INDEX_PHONE = 3;
 
         String[] components = data.split("\\s+");
-
+<<<<<<< HEAD
         if (components.length != 4) {
             throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
         }
