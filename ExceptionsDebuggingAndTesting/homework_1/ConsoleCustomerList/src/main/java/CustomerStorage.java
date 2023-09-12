@@ -15,6 +15,7 @@ public class CustomerStorage {
         final int INDEX_PHONE = 3;
 
         String[] components = data.split("\\s+");
+
         if (components.length != 4) {
             throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
         }
@@ -48,6 +49,12 @@ public class CustomerStorage {
 }
 
 
+=======
+        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
+        storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
+    }
+
+>>>>>>> origin/master
     public void listCustomers() {
         storage.values().forEach(System.out::println);
     }

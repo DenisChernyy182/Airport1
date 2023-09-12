@@ -75,5 +75,11 @@
             <artifactId>checkstyle</artifactId>
             <version>${puppycrawl.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>
