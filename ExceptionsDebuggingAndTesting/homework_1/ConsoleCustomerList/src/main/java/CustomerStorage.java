@@ -46,15 +46,9 @@ public class CustomerStorage {
         // В данном примере просто проверяем, что e-mail содержит символ @
         return email.contains("@");
 
-}
 
-
-=======
-        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
-        storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
     }
 
->>>>>>> origin/master
     public void listCustomers() {
         storage.values().forEach(System.out::println);
     }
