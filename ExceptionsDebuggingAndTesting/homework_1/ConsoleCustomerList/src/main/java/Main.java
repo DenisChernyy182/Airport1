@@ -18,6 +18,7 @@ public class Main {
         try {
             executor.addCustomer("John Smith johnsmith@example.com +1234567890");
             executor.addCustomer("Jane Doe janedoe@example.com 1234567890");
+
         } catch (IllegalArgumentException e) {
             System.out.println("Ошибка при добавлении клиента: " + e.getMessage());
             // Запись ошибки в лог
@@ -25,8 +26,6 @@ public class Main {
         }
 
         executor.listCustomers();
-
-
 
         while (true) {
             String command = scanner.nextLine();

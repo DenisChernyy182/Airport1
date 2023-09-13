@@ -30,6 +30,10 @@ public class CustomerStorage {
             throw new IllegalArgumentException("Неправильный формат e-mail");
         }
 
+//        if (!isValidSurname(name)) {
+//            throw new IllegalArgumentException("Тест добавления коректных данный");
+//        }
+
         storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
     }
 
@@ -45,9 +49,11 @@ public class CustomerStorage {
         // Реализация зависит от требований к формату e-mail
         // В данном примере просто проверяем, что e-mail содержит символ @
         return email.contains("@");
-
-
     }
+
+//    private boolean isValidSurname(String name) {
+//        return name.matches("[a-zA-Z]");
+//    }
 
     public void listCustomers() {
         storage.values().forEach(System.out::println);
