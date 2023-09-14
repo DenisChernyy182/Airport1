@@ -8,7 +8,7 @@ public class CustomerStorage {
         storage = new HashMap<>();
     }
 
-    public void addCustomer(String data) {
+    public boolean addCustomer(String data) {
         final int INDEX_NAME = 0;
         final int INDEX_SURNAME = 1;
         final int INDEX_EMAIL = 2;
@@ -29,31 +29,18 @@ public class CustomerStorage {
         if (!isValidEmail(components[INDEX_EMAIL])) {
             throw new IllegalArgumentException("Неправильный формат e-mail");
         }
-
-//        if (!isValidSurname(name)) {
-//            throw new IllegalArgumentException("Тест добавления коректных данный");
-//        }
-
         storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
+
+        return true;
     }
 
     private boolean isValidPhoneNumber(String phoneNumber) {
-        // Проверка формата номера телефона
-        // Реализация зависит от требований к формату номера телефона
-        // В данном примере просто проверяем, что номер состоит только из цифр
-        return phoneNumber.matches("\\d+");
+        return phoneNumber.matches("^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$");
     }
 
     private boolean isValidEmail(String email) {
-        // Проверка формата e-mail
-        // Реализация зависит от требований к формату e-mail
-        // В данном примере просто проверяем, что e-mail содержит символ @
         return email.contains("@");
     }
-
-//    private boolean isValidSurname(String name) {
-//        return name.matches("[a-zA-Z]");
-//    }
 
     public void listCustomers() {
         storage.values().forEach(System.out::println);
