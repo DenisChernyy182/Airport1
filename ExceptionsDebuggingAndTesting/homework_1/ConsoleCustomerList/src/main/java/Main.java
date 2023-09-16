@@ -31,7 +31,7 @@ public class Main {
             String[] tokens = command.split("\\s+", 2);
 
             if (tokens[0].equals("add")) {
-                if (!executor.addCustomer(tokens[1])) {
+                if (executor.addCustomer(tokens[1])) {
                     System.out.println("Incorrect data, follow the template: " + ADD_COMMAND);
                 }
             } else if (tokens[0].equals("list")) {

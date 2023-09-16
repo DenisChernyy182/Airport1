@@ -15,12 +15,12 @@ public class CustomerStorage {
         final int INDEX_PHONE = 3;
 
         String[] components = data.split("\\s+");
+        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
 
         if (components.length != 4) {
-            throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
+//            throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
+            return false;
         }
-
-        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
 
         if (!isValidPhoneNumber(components[INDEX_PHONE])) {
             throw new IllegalArgumentException("Неверный формат номера телефона");
