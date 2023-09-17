@@ -32,10 +32,12 @@ public class Main {
                 } else if (tokens[0].equals("help")) {
                     System.out.println(helpText);
                 }
+                logger.info("Ошибка при добавлении клиента");
             } catch (Exception e) {
                 System.out.println(COMMAND_ERROR);
-                // Запись ошибки в лог
-                logger.errors("Ошибка при добавлении клиента: " + e.getMessage());
+
+
+
 
             }
         }
