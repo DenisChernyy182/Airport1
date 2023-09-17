@@ -8,7 +8,7 @@ public class CustomerStorage {
         storage = new HashMap<>();
     }
 
-    public boolean addCustomer(String data) {
+    public void addCustomer(String data) {
         final int INDEX_NAME = 0;
         final int INDEX_SURNAME = 1;
         final int INDEX_EMAIL = 2;
@@ -18,8 +18,7 @@ public class CustomerStorage {
         String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
 
         if (components.length != 4) {
-//            throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
-            return false;
+            throw new IllegalArgumentException("Некорректное количество компонентов в переданной строке с данными");
         }
 
         if (!isValidPhoneNumber(components[INDEX_PHONE])) {
@@ -31,7 +30,6 @@ public class CustomerStorage {
         }
         storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
 
-        return true;
     }
 
     private boolean isValidPhoneNumber(String phoneNumber) {

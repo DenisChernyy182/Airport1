@@ -1,6 +1,10 @@
+import java.io.FilterWriter;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class Main {
+
+    private static Logger logger;
     private static final String ADD_COMMAND = "add Василий Петров " +
             "vasily.petrov@gmail.com +79215637722";
     private static final String COMMAND_EXAMPLES = "\t" + ADD_COMMAND + "\n" +
@@ -13,37 +17,26 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
 
-
-        try {
-            executor.addCustomer("John Smith johnsmith@example.com +1234567890");
-            executor.addCustomer("Jane Doe janedoe@example.com 1234567890");
-
-        } catch (IllegalArgumentException e) {
-            System.out.println("Ошибка при добавлении клиента: " + e.getMessage());
-            // Запись ошибки в лог
-            // log.error("Ошибка при добавлении клиента: " + e.getMessage());
-        }
-
-        executor.listCustomers();
-
         while (true) {
             String command = scanner.nextLine();
             String[] tokens = command.split("\\s+", 2);
-
-            if (tokens[0].equals("add")) {
-                if (executor.addCustomer(tokens[1])) {
-                    System.out.println("Incorrect data, follow the template: " + ADD_COMMAND);
+            try {
+                if (tokens[0].equals("add")) {
+                    executor.addCustomer(tokens[1]);
+                } else if (tokens[0].equals("list")) {
+                    executor.listCustomers();
+                } else if (tokens[0].equals("remove")) {
+                    executor.removeCustomer(tokens[1]);
+                } else if (tokens[0].equals("count")) {
+                    System.out.println("There are " + executor.getCount() + " customers");
+                } else if (tokens[0].equals("help")) {
+                    System.out.println(helpText);
                 }
-            } else if (tokens[0].equals("list")) {
-                executor.listCustomers();
-            } else if (tokens[0].equals("remove")) {
-                executor.removeCustomer(tokens[1]);
-            } else if (tokens[0].equals("count")) {
-                System.out.println("There are " + executor.getCount() + " customers");
-            } else if (tokens[0].equals("help")) {
-                System.out.println(helpText);
-            } else {
+            } catch (Exception e) {
                 System.out.println(COMMAND_ERROR);
+                // Запись ошибки в лог
+                logger.errors("Ошибка при добавлении клиента: " + e.getMessage());
+
             }
         }
     }
