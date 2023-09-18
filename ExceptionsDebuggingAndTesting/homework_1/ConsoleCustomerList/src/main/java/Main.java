@@ -1,5 +1,6 @@
 import java.io.FilterWriter;
 import java.util.Scanner;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Main {
@@ -32,13 +33,10 @@ public class Main {
                 } else if (tokens[0].equals("help")) {
                     System.out.println(helpText);
                 }
-                logger.info("Ошибка при добавлении клиента");
+
             } catch (Exception e) {
                 System.out.println(COMMAND_ERROR);
-
-
-
-
+                logger.info("Ошибка при добавлении клиента");
             }
         }
     }
