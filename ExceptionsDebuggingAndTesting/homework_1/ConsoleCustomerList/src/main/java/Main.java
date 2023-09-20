@@ -1,9 +1,7 @@
 import java.io.FilterWriter;
 import java.util.Scanner;
-import java.util.logging.LogManager;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.slf4j.event.Level;
-import org.apache.logging.log4j.*;
 
 public class Main {
 
@@ -19,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
-        logger = LogManager.
+        logger = LogManager.getRootLogger();
 
         while (true) {
             String command = scanner.nextLine();
@@ -37,8 +35,8 @@ public class Main {
                     System.out.println(helpText);
                 }
             } catch (Exception e) {
+                logger.info("Ошибка при добавлении клиента" + e.getMessage());
                 System.out.println(COMMAND_ERROR);
-                logger.info("Ошибка при добавлении клиента");
             }
         }
     }
