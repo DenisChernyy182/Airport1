@@ -18,6 +18,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
         logger = LogManager.getRootLogger();
+        logger.info("test");
 
         while (true) {
             String command = scanner.nextLine();
@@ -35,7 +36,6 @@ public class Main {
                     System.out.println(helpText);
                 }
             } catch (Exception e) {
-                logger.info("Ошибка при добавлении клиента" + e.getMessage());
                 System.out.println(COMMAND_ERROR);
             }
         }
