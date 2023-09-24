@@ -13,18 +13,18 @@
                 <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
             </Filters>
         </File>
-        <File name="SearchFile" fileName="logs/search.log">
-            <PatternLayout pattern="%msg%n"/>
-            <Filters>
-                <MarkerFilter marker="INPUT_HISTORY" />
-            </Filters>
-        </File>
+<!--        <File name="SearchFile" fileName="logs/search.log">-->
+<!--            <PatternLayout pattern="%msg%n"/>-->
+<!--            <Filters>-->
+<!--                <MarkerFilter marker="INPUT_HISTORY" />-->
+<!--            </Filters>-->
+<!--        </File>-->
     </appenders>
 
     <loggers>
         <root level="info">
             <appender-ref ref="SearchFile" level="info"/>
-            <appender-ref ref="SearchFile" />
+<!--            <appender-ref ref="SearchFile" />-->
         </root>
     </loggers>
 

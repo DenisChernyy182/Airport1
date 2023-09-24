@@ -7,10 +7,10 @@ import org.apache.logging.log4j.MarkerManager;
 
 public class Main {
 
-    private static Logger logger;
+//    private static Logger logger;
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private static final Marker INPUT_HISTORY_MARKER = MarkerManager.getMarker("INPUT_HISTORY");
-    private static final Marker INVALID_STATIONS_MARKER = org.apache.logging.log4j.MarkerManager.getMarker("INVALID_STATIONS");
+    private static final Marker COMMAND_ERRORS = org.apache.logging.log4j.MarkerManager.getMarker("COMMAND_ERROR");
     private static final String ADD_COMMAND = "add Василий Петров " +
             "vasily.petrov@gmail.com +79215637722";
     private static final String COMMAND_EXAMPLES = "\t" + ADD_COMMAND + "\n" +
@@ -26,8 +26,9 @@ public class Main {
 //        logger.info("test");
 //        logger.error("Ошибка добовления");
 
-        LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь данные: {}", scanner);
-        LOGGER.info(INVALID_STATIONS_MARKER, "Ошибка, пользователь ввел: {}", scanner);
+
+        LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел : {}");
+        LOGGER.error(COMMAND_ERRORS, "Ошибка, пользователь ввел: {}");
 
         while (true) {
             String command = scanner.nextLine();
