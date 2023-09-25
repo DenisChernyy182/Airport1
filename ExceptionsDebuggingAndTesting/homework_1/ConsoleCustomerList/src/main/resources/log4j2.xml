@@ -1,31 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" strict="true"
+               name="XMLConfigTest" packages="org.apache.logging.log4j.test">
+    <Filter type="ThresholdFilter" level="trace" />
 
-<configuration status="WARN">
-
-    <appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    <Appenders>
+        <Console name="ALL">
+            <Layout type="PatternLayout" pattern="%m %n" />
         </Console>
+        <RollingFile name="rollingFile"
+                     fileName="logs/queries.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "1" />
+                <SizeBasedTriggeringPolicy
+                        size="250 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ALL">
+            <AppenderRef ref="logs/queries.log" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
 
-        <File name="SearchFile" fileName="logs/search.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-            <Filters>
-                <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL" />
-            </Filters>
-        </File>
-<!--        <File name="SearchFile" fileName="logs/search.log">-->
-<!--            <PatternLayout pattern="%msg%n"/>-->
-<!--            <Filters>-->
-<!--                <MarkerFilter marker="INPUT_HISTORY" />-->
-<!--            </Filters>-->
-<!--        </File>-->
-    </appenders>
+    <Appenders>
+        <Console name="ERROR">
+            <Layout type="PatternLayout" pattern="%m %n" />
+        </Console>
+        <RollingFile name="rollingFile"
+                     fileName="logs/errors.log"
+                     filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval = "1" />
+                <SizeBasedTriggeringPolicy
+                        size="250 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="logs/errors.log" />
+            <AppenderRef ref="rollingFile" />
+        </Root>
+    </Loggers>
 
-    <loggers>
-        <root level="info">
-            <appender-ref ref="SearchFile" level="info"/>
-<!--            <appender-ref ref="SearchFile" />-->
-        </root>
-    </loggers>
 
-</configuration>
+</Configuration>

@@ -1,16 +1,14 @@
-import java.io.FilterWriter;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
+
+
+import javax.xml.namespace.QName;
 
 public class Main {
 
-//    private static Logger logger;
+//    private static Logger LOGGER;
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
-    private static final Marker INPUT_HISTORY_MARKER = MarkerManager.getMarker("INPUT_HISTORY");
-    private static final Marker COMMAND_ERRORS = org.apache.logging.log4j.MarkerManager.getMarker("COMMAND_ERROR");
     private static final String ADD_COMMAND = "add Василий Петров " +
             "vasily.petrov@gmail.com +79215637722";
     private static final String COMMAND_EXAMPLES = "\t" + ADD_COMMAND + "\n" +
@@ -22,13 +20,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
-//        logger = LogManager.getRootLogger();
-//        logger.info("test");
-//        logger.error("Ошибка добовления");
 
 
-        LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел : {}");
-        LOGGER.error(COMMAND_ERRORS, "Ошибка, пользователь ввел: {}");
+        LOGGER.info( "Пользователь ввел :{}");
+        LOGGER.error("Ошибка, пользователь ввел: {}", " ");
 
         while (true) {
             String command = scanner.nextLine();
