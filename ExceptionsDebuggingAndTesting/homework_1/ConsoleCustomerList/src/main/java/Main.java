@@ -2,9 +2,6 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-import javax.xml.namespace.QName;
-
 public class Main {
 
 //    private static Logger LOGGER;
@@ -20,7 +17,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
-
 
         LOGGER.info( "Пользователь ввел :{}");
         LOGGER.error("Ошибка, пользователь ввел: {}", " ");
