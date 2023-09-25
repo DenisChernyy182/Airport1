@@ -26,7 +26,6 @@
             <AppenderRef ref="rollingFile" />
         </Root>
     </Loggers>
-
     <Appenders>
         <Console name="ERROR">
             <Layout type="PatternLayout" pattern="%m %n" />
