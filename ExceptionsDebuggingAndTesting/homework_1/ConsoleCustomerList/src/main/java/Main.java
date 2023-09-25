@@ -3,8 +3,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Main {
-
-//    private static Logger LOGGER;
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     private static final String ADD_COMMAND = "add Василий Петров " +
             "vasily.petrov@gmail.com +79215637722";
