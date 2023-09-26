@@ -36,7 +36,7 @@ public class Main {
                 }
             } catch (Exception e) {
                 System.out.println(COMMAND_ERROR);
-                errorsLogger.error("Ошибка, пользователь ввел: ", e);
+                errorsLogger.error("Ошибка: ", e);
             }
             queriesLogger.info("Пользователь ввел :" + command);
         }
