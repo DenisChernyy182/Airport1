@@ -1,9 +1,12 @@
 import java.util.Scanner;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Main {
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+    private static final Logger queriesLogger = LogManager.getLogger("QueriesLog");
+    private static final Logger errorsLogger = LogManager.getLogger("ErrorsLog");
+
     private static final String ADD_COMMAND = "add Василий Петров " +
             "vasily.petrov@gmail.com +79215637722";
     private static final String COMMAND_EXAMPLES = "\t" + ADD_COMMAND + "\n" +
@@ -15,9 +18,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CustomerStorage executor = new CustomerStorage();
-
-        LOGGER.info( "Пользователь ввел :{}");
-        LOGGER.error("Ошибка, пользователь ввел: {}", " ");
 
         while (true) {
             String command = scanner.nextLine();
@@ -36,7 +36,9 @@ public class Main {
                 }
             } catch (Exception e) {
                 System.out.println(COMMAND_ERROR);
+                errorsLogger.error("Ошибка, пользователь ввел: ", e);
             }
+            queriesLogger.info("Пользователь ввел :" + command);
         }
     }
 }
