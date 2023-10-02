@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
 public class RouteCalculatorTest {
     private Line line;
     private StationIndex stationIndex;
