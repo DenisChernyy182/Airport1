@@ -2,7 +2,6 @@ import core.Line;
 import core.Station;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class StationIndex {
     private final Map<Integer, Line> number2line;
@@ -29,8 +28,7 @@ public class StationIndex {
                 connections.put(station, new TreeSet<>());
             }
             TreeSet<Station> connectedStations = connections.get(station);
-            connectedStations.addAll(stations.stream()
-                    .filter(s -> !s.equals(station)).collect(Collectors.toList()));
+            connectedStations.addAll(stations);
         }
     }
 
