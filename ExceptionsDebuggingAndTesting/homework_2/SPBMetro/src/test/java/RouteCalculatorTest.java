@@ -10,7 +10,6 @@ public class RouteCalculatorTest {
     private Line line;
     private StationIndex stationIndex;
     private RouteCalculator calculator;
-
     @BeforeEach
     public void setUp() {
         stationIndex = new StationIndex();
