@@ -45,11 +45,11 @@ public class RouteCalculatorTest {
     public void testGetShortestRouteWithoutTransfers() {
         List<Station> actual = calculator.getShortestRoute(
                 stationIndex.getStation("Станция 1"),
-                stationIndex.getStation("Станция 2")
+                stationIndex.getStation("Станция 3")
         );
         List<Station> expected = List.of(
                 stationIndex.getStation("Станция 1"),
-                stationIndex.getStation("Станция 2")
+                stationIndex.getStation("Станция 3")
         );
         Assertions.assertEquals(expected, actual, "Маршрут без пересадок");
     }
@@ -79,7 +79,6 @@ public class RouteCalculatorTest {
         double expected = 2.5;
         Assertions.assertEquals(expected, actual, 0.01, "Длительность маршрута без пересадок");
     }
-
     @Test
     public void testCalculateDurationWithOneTransfer() {
         List<Station> route = List.of(
